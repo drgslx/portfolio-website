@@ -13,10 +13,10 @@ const Home = () => {
     animate={{ opacity: 1 }}
     animated={{ opacity: 1 }}
     transition={{ duration: 0.5 }}
-    className="h-full flex flex-col items-center lg:flex-row justify-center px-4 sm:px-8 md:12 lg:px-20 xl:px-48"
+    className="h-full flex flex-col items-center lg:flex-row overflow-hidden justify-center px-4 sm:px-8 md:12 lg:px-20 xl:px-48"
     >
       {/* Profile picture container*/}
-      <div className=" lg:h-full lg:w-1/2 relative rounded-xl overflow-scroll" style={{ maxHeight: "60vh"}}>
+      <div className=" lg:h-full lg:w-1/2 relative rounded-xl overflow-hidden" style={{ maxHeight: "60vh"}}>
         <Image
           src="/dragos2.jpg"
           alt="Dragos-picture"

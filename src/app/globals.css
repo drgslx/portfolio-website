@@ -32,9 +32,16 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
-    justify-content: space-between;
+    background-color: rgb(144, 144, 144);
+    display: flex;
+   
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
 }
 
 .brain-container {

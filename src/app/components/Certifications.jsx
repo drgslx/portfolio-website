@@ -99,18 +99,20 @@ const Certifications = ({}) => {
   return (
     <motion.div
       ref={ref}
-      initial={{ x: "100%" }}
-      animate={{ x: "0%" }}
+      initial={{ opacity: "0%" }}
+      animate={{ opacity: "100%" }}
       transition={{ duration: 0.5 }}
-      className="flex flex-col justify-center items-center  h-100vh w-full" 
+      className="flex flex-col justify-center items-center bg-gray-900 h-100vh w-full" 
     >
-      <div className="p-8"><h1 className="text-6xl font-bold mb-8">Certifications</h1></div>
+      <div className="p-8"><h1 className="text-6xl text-stone-100 font-bold mb-8">Certifications</h1></div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14">
+      <div initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 md:gap-8">
         {certificates.map((certificate) => (
           <motion.div
+          
             key={certificate.id}
-            className={`bg-gradient-to-r ${certificate.color} rounded-lg flex flex-col justify-between items-center`}
+            className={`bg-gradient-to-r bg-stone-100 rounded-lg flex flex-col justify-between items-center`}
             whileHover={{ scale: 1.10, transition: { duration: 0.3 } }}
           >
             <div className="p-4 m-4 ">
@@ -129,7 +131,7 @@ const Certifications = ({}) => {
             
             <div className="p-4">
               <Link href={certificate.link} className="text-blue-600 hover:underline">
-                Check Github!
+                Check Certificate
               </Link>
             </div>
           </motion.div>
