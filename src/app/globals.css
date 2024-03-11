@@ -16,6 +16,17 @@
   }
 }
 
+textarea {
+  min-height: 40%;
+  
+  resize: vertical;
+}
+
+input {
+  max-height: 20%;
+  color: rgb(231 229 228);;
+}
+
 body {
     height: 100%;
     width: 100%;
@@ -28,7 +39,7 @@ body {
 
 .brain-container {
   width: 50%;
-  height: 100%;
+  height: 50%;
   position: sticky;
   top: 0;
 }

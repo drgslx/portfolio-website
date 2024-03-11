@@ -3,22 +3,10 @@ import { motion, useViewportScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
-import Certifications from "../components/Certifications";
 
-const PortfolioPage = ({}) => {
-  // const certifications = [
-  //   {
-  //     id: 1,
-  //     color: "from-red-300 to-blue-300",
-  //     title: "Building Modern Projects with React",
-  //     desc:
-  //       "No description yet but stayed tuned!",
-  //       img: "/images/certifications/modern-projects-react.jpg"
-  //     link: "https://www.linkedin.com/learning/certificates/6ad9f94a121fe4ed661a6605142539fb870ae233bd8cb3f3e0e0ffe9d1505d65?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BEJoHeEoERJmUq%2B3nmLOP3w%3D%3D",
-  //   },
-    
-  // ]
-  const items = [
+const Certifications = ({}) => {
+
+  const certificates = [
     {
       id: 1,
       color: "from-red-300 to-blue-300",
@@ -79,6 +67,26 @@ const PortfolioPage = ({}) => {
         "https://images.pexels.com/photos/18540208/pexels-photo-18540208/free-photo-of-wood-landscape-water-hill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       link: "https://lama.dev",
     },
+    {
+        id: 4,
+        color: "from-purple-300 to-red-300",
+        title: "Spotify Music App",
+        desc:
+            "Food ordering app with functionalities like add to cart, filtering, reseting the filter and so on",
+        img:
+          "https://images.pexels.com/photos/18540208/pexels-photo-18540208/free-photo-of-wood-landscape-water-hill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        link: "https://lama.dev",
+      },
+      {
+        id: 4,
+        color: "from-purple-300 to-red-300",
+        title: "Spotify Music App",
+        desc:
+            "Food ordering app with functionalities like add to cart, filtering, reseting the filter and so on",
+        img:
+          "https://images.pexels.com/photos/18540208/pexels-photo-18540208/free-photo-of-wood-landscape-water-hill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        link: "https://lama.dev",
+      },
     
   ];
 
@@ -94,33 +102,33 @@ const PortfolioPage = ({}) => {
       initial={{ x: "100%" }}
       animate={{ x: "0%" }}
       transition={{ duration: 0.5 }}
-      className="px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 flex flex-col justify-center items-center overflow-scroll h-100vh w-full" 
+      className="flex flex-col justify-center items-center  h-100vh w-full" 
     >
-      <div className="p-8"><h1 className="text-6xl font-bold mb-8">Portfolio</h1></div>
+      <div className="p-8"><h1 className="text-6xl font-bold mb-8">Certifications</h1></div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14">
-        {items.map((item) => (
+        {certificates.map((certificate) => (
           <motion.div
-            key={item.id}
-            className={`bg-gradient-to-r ${item.color} rounded-lg flex flex-col justify-between items-center`}
+            key={certificate.id}
+            className={`bg-gradient-to-r ${certificate.color} rounded-lg flex flex-col justify-between items-center`}
             whileHover={{ scale: 1.10, transition: { duration: 0.3 } }}
           >
             <div className="p-4 m-4 ">
-              <h1 className="text-3xl  font-bold mb-2">{item.title}</h1>
+              <h1 className="text-3xl  font-bold mb-2">{certificate.title}</h1>
               <div className="relative h-60">
               <Image
-                src={item.img}
+                src={certificate.img}
                 alt=""
                 layout="fill"
                 objectFit="cover"
                 className="rounded-b-lg"
               />
             </div>
-              <p className="text-gray-800">{item.desc}</p>
+              <p className="text-gray-800">{certificate.desc}</p>
             </div>
             
             <div className="p-4">
-              <Link href={item.link} className="text-blue-600 hover:underline">
+              <Link href={certificate.link} className="text-blue-600 hover:underline">
                 Check Github!
               </Link>
             </div>
@@ -128,67 +136,11 @@ const PortfolioPage = ({}) => {
         ))}
       </div>
 
-      {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14">
-        {certifications.map((item) => (
-          <motion.div
-            key={item.id}
-            className={`bg-gradient-to-r ${item.color} rounded-lg `}
-            whileHover={{ scale: 1.10, transition: { duration: 0.3 } }}
-          >
-            <div className="p-4 m-4">
-              <h1 className="text-3xl  font-bold mb-2">{item.title}</h1>
-              <p className="text-gray-800">{item.desc}</p>
-            </div>
-            <div className="relative h-60">
-              <Image
-                src={item.img}
-                alt=""
-                layout="fill"
-                objectFit="cover"
-                className="rounded-b-lg"
-              />
-            </div>
-            <div className="p-4">
-              <Link href={item.link} className="text-blue-600 hover:underline">
-                Check Github!
-              </Link>
-            </div>
-          </motion.div>
-        ))}
-      </div> */}
+      
 
-      <div className="w-screen h-screen flex flex-col gap-16 items-center justify-center text-center">
-        <h1 className="text-8xl">Do you have a project?</h1>
-        <div className="relative">
-          <motion.svg
-            animate={{ rotate: 360 }}
-            transition={{ duration: 8, ease: "linear", repeat: Infinity }}
-            viewBox="0 0 300 300"
-            className="w-64 h-64 md:w-[500px] md:h-[500px] "
-          >
-            <defs>
-              <path
-                id="circlePath"
-                d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "
-              />
-            </defs>
-            <text fill="#000">
-              <textPath xlinkHref="#circlePath" className="text-xl">
-                Front-end Developer and UI Designer
-              </textPath>
-            </text>
-          </motion.svg>
-          <Link
-            href="/contact"
-            className="w-16 h-16 md:w-28 md:h-28 absolute top-0 left-0 right-0 bottom-0 m-auto bg-black text-white rounded-full flex items-center justify-center"
-          >
-            Hire Me
-          </Link>
-        </div>
-      </div>
-      <Certifications />
+     
     </motion.div>
   );
 };
 
-export default PortfolioPage;
+export default Certifications;

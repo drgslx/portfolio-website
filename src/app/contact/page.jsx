@@ -69,19 +69,19 @@ const ContactPage = () => {
           ref={form}
           className="h-1/2 lg:h-full lg:w-1/2 bg-gray-900 rounded-xl text-xl flex flex-col gap-8 justify-center p-24"
         >
-          <span>Dear Dragos-Stefan,</span>
+          <span className="text-sm text-stone-300">Dear Dragos-Stefan,</span>
           <textarea
-            rows={14}
-            className="h-2/3 bg-transparent border-b-2 text-sm border-stone-300 outline-none"
+            rows={20}
+            className="text-stone-300 h-3/4 bg-transparent border-b-2 text-sm border-stone-300 outline-none resize-vertical"
             name="user_message"
           />
-          <span>My mail address is:</span>
+          <span className="text-sm text-stone-300">My mail address is:</span>
           <input
             name="user_email"
             type="text"
-            className="bg-transparent border-b-2 border-stone-300 outline-none"
+            className=" text-sm bg-transparent border-b-2 border-stone-300 outline-none"
           />
-          <span className="text-sm">Regards</span>
+          <span className="text-sm text-stone-300">Regards</span>
           <button className="bg-gray-900 border-stone-300 rounded font-semibold text-gray-200 p-4 hover:bg-gray-700 hover:text-white">Send
 </button>
           {success && (
