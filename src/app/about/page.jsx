@@ -35,15 +35,24 @@ const AboutPage = () => {
             <h1 className="font-bold text-2xl">BIOGRAPHY</h1>
             {/* BIOGRAPHY DESC */}
             <p className="text-lg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-              harum quibusdam cupiditate nobis accusamus sed aut aperiam,
-              reiciendis numquam! Voluptas voluptatibus obcaecati dolore itaque
-              suscipit! Vel doloremque numquam quam nihil.
+            Motivated by a passion for technology, I am eager to transition into web and software development. 
+            With a solid foundation from Hyperion University of IT, I bring versatile skills in JavaScript, C++, 
+            SQL/PLSQL, and hands-on experience in HTML, CSS, JavaScript, and React.js
+            <br /><br />
+            My NOC background has honed my troubleshooting and monitoring abilities, complemented by a deep understanding of networking principles and Linux systems.
+            <br /><br />
+            Knowledgeable in JavaScript, C++, SQL/PLSQL, and experienced in development with
+              HTML, CSS, Javascript , and React.js, I adeptly utilize these languages to build projects
+            and comprehend Software development and architecture.
+          <br /><br />
+          Proficient in optimizing system performance using tools like Prometheus, Grafana, and Kibana, 
+          I bridge the gap between programming and IT operations, poised to contribute effectively to any organization success offering solution and services to clients and organization.
+          <br />
+
+
             </p>
             {/* BIOGRAPHY QUOTE */}
-            <span className="italic">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </span>
+            <span className="italic">The secret of getting ahead is getting started            </span>
            
             {/* BIOGRAPHY SCROLL SVG */}
             <motion.svg
