@@ -10,9 +10,9 @@ const Certifications = ({}) => {
     {
       id: 1,
       color: "from-red-300 to-blue-300",
-      title: "Food ordering app",
+      title: "Building Modern Projects with React",
       desc:
-        "Food ordering app with functionalities like add to cart, filtering, reseting the filter and so on",
+        "Creating modern projects according to Today's trends, inluding Redux, React Router, etc.",
       img:
         "https://images.pexels.com/photos/18073372/pexels-photo-18073372/free-photo-of-young-man-sitting-in-a-car-on-a-night-street.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
       link: "https://lama.dev",
@@ -20,9 +20,9 @@ const Certifications = ({}) => {
     {
       id: 2,
       color: "from-blue-300 to-violet-300",
-      title: "Ecommerce ",
+      title: "React.js: Building an interface ",
       desc:
-          "Food ordering app with functionalities like add to cart, filtering, reseting the filter and so on",
+          "Building a web interface with React.JS and react basic functionalities",
       img:
         "https://images.pexels.com/photos/18023772/pexels-photo-18023772/free-photo-of-close-up-of-a-person-holding-a-wristwatch.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
       link: "https://lama.dev",
@@ -30,9 +30,9 @@ const Certifications = ({}) => {
     {
       id: 3,
       color: "from-violet-300 to-purple-300",
-      title: "Filtering app and sorting",
+      title: "React.js Essential Training",
       desc:
-          "Food ordering app with functionalities like add to cart, filtering, reseting the filter and so on",
+          " Learned about React Essentials and how to use it in your projects, including Hooks",
       img:
         "https://images.pexels.com/photos/6894528/pexels-photo-6894528.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
       link: "https://lama.dev",
@@ -99,24 +99,30 @@ const Certifications = ({}) => {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: "0%" }}
-      animate={{ opacity: "100%" }}
-      transition={{ duration: 0.5 }}
+     
+  
       className="flex flex-col justify-center items-center bg-gray-900 h-100vh w-full" 
     >
       <div className="p-8"><h1 className="text-6xl text-stone-100 font-bold mb-8">Certifications</h1></div>
       
-      <div initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 md:gap-8">
+      <motion.div  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 md:gap-8">
         {certificates.map((certificate) => (
           <motion.div
-          
+          initial={{ opacity: 0, scale: 0}}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{
+            type: "spring",
+            stiffness: 260,
+            damping: 20,
+            duration: 1,
+          }}
             key={certificate.id}
-            className={`bg-gradient-to-r bg-stone-100 rounded-lg flex flex-col justify-between items-center`}
-            whileHover={{ scale: 1.10, transition: { duration: 0.3 } }}
+            className={` bg-gradient-to-r bg-stone-100 rounded-lg flex flex-col justify-between items-center`}
+            whileHover={{rotate: 3, scale: 1.10, transition: { duration: 0.3 } }}
           >
             <div className="p-4 m-4 ">
-              <h1 className="text-3xl  font-bold mb-2">{certificate.title}</h1>
+              <h1 className="text-3xl md:text-sm lg:text-lg  font-bold mb-2">{certificate.title}</h1>
               <div className="relative h-60">
               <Image
                 src={certificate.img}
@@ -128,7 +134,6 @@ const Certifications = ({}) => {
             </div>
               <p className="text-gray-800">{certificate.desc}</p>
             </div>
-            
             <div className="p-4">
               <Link href={certificate.link} className="text-blue-600 hover:underline">
                 Check Certificate
@@ -136,7 +141,7 @@ const Certifications = ({}) => {
             </div>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       
 

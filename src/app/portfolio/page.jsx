@@ -72,7 +72,8 @@ const PortfolioPage = ({}) => {
           <motion.div
             key={item.id}
             className={`bg-gradient-to-r ${item.color} rounded-lg flex flex-col justify-between items-center`}
-            whileHover={{ scale: 1.10, transition: { duration: 0.3 } }}
+            whileHover={{rotate: 3, scale: 1.10, transition: { duration: 0.3 } }}
+            
           >
             <div className="p-4 m-4 ">
               <h1 className="text-3xl  font-bold mb-2">{item.title}</h1>
