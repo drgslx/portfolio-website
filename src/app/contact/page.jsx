@@ -1,11 +1,11 @@
-"use client";
+"use client"
+
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import emailjs from '@emailjs/browser';
 
-
 const ContactPage = () => {
-  const [success, setSuccess] = useState();
+  const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
   const text = "Say Hello";
 
@@ -23,12 +23,10 @@ const ContactPage = () => {
         form.current,
         process.env.NEXT_PUBLIC_KEY
       )
-      .then(
-        () => {
-          setSuccess(true);
-          form.current.reset();
-        }
-      )
+      .then(() => {
+        setSuccess(true);
+        form.current.reset();
+      })
       .catch((error) => {
         console.error('Email sending failed:', error);
         setError(true);
@@ -42,9 +40,9 @@ const ContactPage = () => {
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
-      <div className="h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
+      <div className="h-full flex flex-col lg:flex-row py-8 px-4 sm:px-8 lg:px-20 xl:px-48">
         {/* TEXT CONTAINER */}
-        <div className="h-1/2 lg:h-full lg:w-1/2 flex items-center justify-center text-6xl">
+        <div className="h-1/2 lg:w-1/2 flex items-center justify-center text-6xl">
           <div>
             {text.split("").map((letter, index) => (
               <motion.span
@@ -67,29 +65,28 @@ const ContactPage = () => {
         <form
           onSubmit={sendEmail}
           ref={form}
-          className="h-1/2 lg:h-full lg:w-1/2 bg-gray-900 rounded-xl text-xl flex flex-col gap-8 justify-center p-24"
+          className="h-auto md:h-1/2 sm:h-full lg:h-full lg:w-1/2 bg-gray-900 rounded-xl text-xl flex flex-col gap-8 justify-center md:p-8 lg:p-12 xl:p-24"
         >
           <span className="text-sm text-stone-300">Dear Dragos-Stefan,</span>
           <textarea
-            rows={20}
-            className="text-stone-300 h-3/4 bg-gray-700 rounded-xl text-sm border-stone-300 outline-none resize-vertical"
+            rows={8}
+            className="text-stone-300 bg-gray-700 rounded-xl text-sm border-stone-300 outline-none resize-vertical"
             name="user_message"
           />
           <span className="text-sm text-stone-300">My name is:</span>
           <input
             name="user_name"
             type="text"
-            className=" text-sm bg-transparent border-b-2 border-stone-300 outline-none"
+            className="text-sm bg-transparent border-b-2 border-stone-300 outline-none"
           />
-          <span className="text-sm text-stone-300">My mail address is:</span>
+          <span className="text-sm text-stone-300">My email address is:</span>
           <input
             name="user_email"
-            type="text"
-            className=" text-sm bg-transparent border-b-2 border-stone-300 outline-none"
+            type="email"
+            className="text-sm bg-transparent border-b-2 border-stone-300 outline-none"
           />
           <span className="text-sm text-stone-300">Regards</span>
-          <button className="bg-gray-900 border-stone-300 rounded font-semibold text-gray-200 p-4 hover:bg-gray-700 hover:text-white">Send
-</button>
+          <button className="bg-gray-900 border-stone-300 rounded font-semibold text-gray-200 p-4 hover:bg-gray-700 hover:text-white">Send</button>
           {success && (
             <span className="text-green-600 font-semibold">
               Your message has been sent successfully!
