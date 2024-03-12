@@ -42,7 +42,7 @@ const ContactPage = () => {
     >
       <div className="h-full flex flex-col lg:flex-row py-12 px-4 sm:px-8 lg:px-20 xl:px-48">
         {/* TEXT CONTAINER */}
-        <div className="h-1/2 lg:w-1/2 flex items-center justify-center text-6xl">
+        <div className="h-full md:h-full sm-h-1/4  flex items-center justify-center md:text-3xl sm:text-2xl lg:w-1/2 lg:text-6xl">
           <div>
             {text.split("").map((letter, index) => (
               <motion.span
@@ -65,9 +65,9 @@ const ContactPage = () => {
         <form
           onSubmit={sendEmail}
           ref={form}
-          className="h-auto md:h-1/2 sm:h-full lg:h-full lg:w-1/2 bg-gray-900 rounded-xl text-xl flex flex-col gap-8 justify-center md:p-8 lg:p-12 xl:p-24"
+          className="h-auto sm:w-full sm:gap-4 sm:h-full md:gap-8 md:w-full sm:h-full p-4 md:h-full sm:h-full lg:h-full lg:w-1/2 bg-gray-900 rounded-xl text-xl flex flex-col gap-8 justify-center md:p-8 lg:p-12 xl:p-24"
         >
-          <span className="text-sm text-stone-300">Dear Dragos-Stefan,</span>
+          <span className="text-sm sm-text-gray-900 lg:text-stone-300">Dear Dragos-Stefan,</span>
           <textarea
             rows={8}
             className="text-stone-300 bg-gray-700 rounded-xl text-sm border-stone-300 outline-none resize-vertical"
@@ -86,7 +86,7 @@ const ContactPage = () => {
             className="text-sm bg-transparent border-b-2 border-stone-300 outline-none"
           />
           <span className="text-sm text-stone-300">Regards</span>
-          <button className="bg-gray-900 border-stone-300 rounded font-semibold text-gray-200 p-4 hover:bg-gray-700 hover:text-white">Send</button>
+          <button className="bg-gray-900 sm:text-stone-300 border-stone-300 rounded font-semibold text-gray-200 p-4 hover:bg-gray-700 hover:text-white">Send</button>
           {success && (
             <span className="text-green-600 font-semibold">
               Your message has been sent successfully!
