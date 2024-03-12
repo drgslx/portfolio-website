@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Link from "next/link";
 
 const Home = () => {
   const [open, setOpen] = useState(false);
@@ -36,10 +37,10 @@ const Home = () => {
         {/*Buttons Container */}
         <div className="flex gap-4 w-full items-center justify-center">
           <button className="p-4 rounded border-2 border-black text-black hover:bg-black hover:text-white">
-            View My work
+            <Link href="/portfolio">View My work</Link>
           </button>
           <button className="p-4 rounded border-2 border-black bg-black text-white hover:bg-white hover:text-black">
-            Contact Me
+          <Link href="/contact">Contact Me!</Link>
           </button>
         </div>
       </div>

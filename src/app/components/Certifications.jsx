@@ -105,7 +105,7 @@ const Certifications = ({}) => {
     >
       <div className="p-8"><h1 className="text-6xl text-stone-100 font-bold mb-8">Certifications</h1></div>
       
-      <motion.div  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-14 md:gap-8">
+      <motion.div  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-24 md:gap-8">
         {certificates.map((certificate) => (
           <motion.div
           initial={{ opacity: 0, scale: 0}}
@@ -118,23 +118,23 @@ const Certifications = ({}) => {
             duration: 1,
           }}
             key={certificate.id}
-            className={` bg-gradient-to-r bg-stone-100 rounded-lg flex flex-col justify-between items-center`}
+            className={` bg-gradient-to-r bg-stone-100 rounded-lg flex flex-col justify-around items-center`}
             whileHover={{ scale: 1.10, transition: { duration: 0.3 } }}
           >
-            <div className="p-8 m-8">
-              <h1 className="text-3xl md:text-sm lg:text-lg  font-bold mb-2">{certificate.title}</h1>
+            <div className="h-full p-12">
+              
               <div className="relative h-60">
               <Image
                 src={certificate.img}
                 alt=""
                 layout="fill"
                 objectFit="cover"
-                className="rounded-b-lg h-400px w-200px"
+                className="rounded-b-lg w-screen"
               />
             </div>
               <p className="text-gray-800">{certificate.desc}</p>
             </div>
-            <div className="p-4">
+            <div className="p-8">
               <Link href={certificate.link} className="text-blue-600 hover:underline">
                 Check Certificate
               </Link>
