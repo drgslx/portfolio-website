@@ -40,7 +40,7 @@ const ContactPage = () => {
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
-      <div className="h-full flex flex-col lg:flex-row py-8 px-4 sm:px-8 lg:px-20 xl:px-48">
+      <div className="h-full flex flex-col lg:flex-row py-12 px-4 sm:px-8 lg:px-20 xl:px-48">
         {/* TEXT CONTAINER */}
         <div className="h-1/2 lg:w-1/2 flex items-center justify-center text-6xl">
           <div>
