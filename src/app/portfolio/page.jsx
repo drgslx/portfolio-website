@@ -72,7 +72,7 @@ const PortfolioPage = ({}) => {
           <motion.div
             key={item.id}
             className={`bg-gradient-to-r ${item.color} rounded-lg flex flex-col justify-between items-center`}
-            whileHover={{rotate: 3, scale: 1.10, transition: { duration: 0.3 } }}
+            whileHover={{ scale: 1.10, transition: { duration: 0.3 } }}
             
           >
             <div className="p-4 m-4 ">

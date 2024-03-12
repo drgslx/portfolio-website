@@ -1,4 +1,5 @@
 "use client"
+
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,8 +14,7 @@ const Certifications = ({}) => {
       title: "Building Modern Projects with React",
       desc:
         "Creating modern projects according to Today's trends, inluding Redux, React Router, etc.",
-      img:
-        "https://images.pexels.com/photos/18073372/pexels-photo-18073372/free-photo-of-young-man-sitting-in-a-car-on-a-night-street.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+      img:"/modern-projects-react.jpg",
       link: "https://lama.dev",
     },
     {
@@ -105,7 +105,7 @@ const Certifications = ({}) => {
     >
       <div className="p-8"><h1 className="text-6xl text-stone-100 font-bold mb-8">Certifications</h1></div>
       
-      <motion.div  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 md:gap-8">
+      <motion.div  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-14 md:gap-8">
         {certificates.map((certificate) => (
           <motion.div
           initial={{ opacity: 0, scale: 0}}
@@ -119,9 +119,9 @@ const Certifications = ({}) => {
           }}
             key={certificate.id}
             className={` bg-gradient-to-r bg-stone-100 rounded-lg flex flex-col justify-between items-center`}
-            whileHover={{rotate: 3, scale: 1.10, transition: { duration: 0.3 } }}
+            whileHover={{ scale: 1.10, transition: { duration: 0.3 } }}
           >
-            <div className="p-4 m-4 ">
+            <div className="p-8 m-8">
               <h1 className="text-3xl md:text-sm lg:text-lg  font-bold mb-2">{certificate.title}</h1>
               <div className="relative h-60">
               <Image
@@ -129,7 +129,7 @@ const Certifications = ({}) => {
                 alt=""
                 layout="fill"
                 objectFit="cover"
-                className="rounded-b-lg"
+                className="rounded-b-lg h-400px w-200px"
               />
             </div>
               <p className="text-gray-800">{certificate.desc}</p>
