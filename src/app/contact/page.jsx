@@ -72,8 +72,14 @@ const ContactPage = () => {
           <span className="text-sm text-stone-300">Dear Dragos-Stefan,</span>
           <textarea
             rows={20}
-            className="text-stone-300 h-3/4 bg-transparent border-b-2 text-sm border-stone-300 outline-none resize-vertical"
+            className="text-stone-300 h-3/4 bg-gray-700 rounded-xl text-sm border-stone-300 outline-none resize-vertical"
             name="user_message"
+          />
+          <span className="text-sm text-stone-300">My name is:</span>
+          <input
+            name="user_name"
+            type="text"
+            className=" text-sm bg-transparent border-b-2 border-stone-300 outline-none"
           />
           <span className="text-sm text-stone-300">My mail address is:</span>
           <input
